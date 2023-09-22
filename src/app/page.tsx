@@ -1,7 +1,13 @@
-export default function Home() {
+import HelloClient from "./HelloClient";
+import { serverClient } from "./_trpc/serverClient";
+
+export default async function Home() {
+  const helloMsg = await serverClient.sayHello();
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-center">
-      <h1 className="text-4xl font-semibold">Hello, World!</h1>
+      <p>Fetching in server: {helloMsg}</p>
+      <HelloClient />
     </main>
   );
 }
