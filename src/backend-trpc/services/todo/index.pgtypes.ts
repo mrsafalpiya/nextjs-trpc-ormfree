@@ -15,3 +15,4 @@ export interface IAllTodosSqlQuery {
   params: IAllTodosSqlParams;
   result: IAllTodosSqlResult;
 }
+
