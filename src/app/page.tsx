@@ -5,7 +5,11 @@ export default async function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center">
-      <p>{JSON.stringify(todos)}</p>
+      {todos.map((todo) => (
+        <p key={todo.id}>
+          {todo.title} - {todo.info}
+        </p>
+      ))}
     </main>
   );
 }
